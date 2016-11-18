@@ -12,9 +12,6 @@ gem 'pg'
 gem 'rmagick', :require => 'RMagick'
 gem 'carrierwave-datamapper' , :require => 'carrierwave'
 gem 'mini_magick'
-
-group :test do
-	gem 'rspec'
-	gem 'capybara'
-  gem 'database_cleaner'
-end
+gem 'rspec'
+gem 'capybara'
+gem 'database_cleaner'
