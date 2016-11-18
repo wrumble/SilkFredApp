@@ -6,7 +6,10 @@ require_relative 'models/csvfile'
 
   class SilkFredApp < Sinatra::Base
 
+    set :public_folder, File.dirname(__FILE__) + "/public"
+
     get '/' do
+      p File.dirname(__FILE__) + "/../public"
       erb(:index)
     end
 
@@ -16,12 +19,17 @@ require_relative 'models/csvfile'
       file_path = "app/public/csv_files/#{file_name}"
       File.open(file_path, "wb") do |file|
         file.write(file_data.read)
-        @csv_file = CsvFile.create(name: file_name,
+        @@csv_file = CsvFile.create(name: file_name,
                                   path: file_path,
                                   date: Time.now.strftime("%d/%m/%Y %H:%M"),
                                   file: file)
       end
-      file = CSV_File_Reader.new(@csv_file)
+      file = CSV_File_Reader.new(@@csv_file)
+      redirect '/finished'
+    end
+
+    get '/finished' do
+      @file = @@csv_file
       erb(:finished)
     end
 

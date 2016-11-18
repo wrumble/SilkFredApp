@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html style="margin: 0; padding: 0; width: 100%; height: 100%; display: table;">
+<html>
   <head>
     <meta charset="utf-8">
     <title>Finished</title>
   </head>
-  <body style="margin: 0; padding: 0; width: 100%; height: 100%; display: table;">
-    <h1 style="display: table-cell; text-align: center; vertical-align: middle;">Watermarked Montages Have Been Created Succesfully</h1>
-    <img style="display: table-cell; text-align: center; vertical-align: middle;" src="app/public/images/watermark.png" />
+  <body >
+    <img style="margin: auto; display: block;" src="/images/watermark.png" />
+    <h1 style="text-align: center;">
+      Watermarked Montages Have Been Created Succesfully</h1>
+    <h4 style="text-align: center;">
+      Click button button below to download the updated .csv file with links to the new montage images.</h4>
+      <div style="text-align: center;">
+        <a href="/csv_file/<%=@file.name%>" download="updated_<%=@file.name%>" style="text-align: center;" download>Download</a>
+      </div>
   </body>
 </html>
