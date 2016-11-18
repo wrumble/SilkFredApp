@@ -11,4 +11,4 @@ require_relative 'uploaders/image_uploader'
 
 DataMapper.setup(:default, ENV["DATABASE_URL"] || "postgres://localhost/silkfredapp_#{ENV['RACK_ENV']}")
 DataMapper.finalize
-DataMapper.autoupgrade!
+DataMapper.auto_upgrade!
