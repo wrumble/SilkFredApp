@@ -12,7 +12,6 @@ gem 'pg'
 gem 'rmagick', :require => 'RMagick'
 gem 'carrierwave-datamapper' , :require => 'carrierwave'
 gem 'mini_magick'
-gem 'thin'
 
 gem 'rspec'
 gem 'capybara'
