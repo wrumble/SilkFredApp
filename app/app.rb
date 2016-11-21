@@ -33,5 +33,11 @@ require_relative 'models/csv_file_updater'
       erb(:finished)
     end
 
+    get '/finished/downloading' do
+      filepath = "app/public/csv_files/#{@@csv_file.date}/#{@@csv_file.name}"
+      send_file filepath, :filename => "updated_#{@@csv_file.name}", :type => 'Application/octet-stream'
+      erb(:finished)
+    end
+
     run! if app_file == $0
   end

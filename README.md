@@ -1,11 +1,9 @@
-Clone the repo and copy the Skeleton app folder and rename it to your app name.
+To run:
 
-You will need to create either a skeleton_app_development and skeleton_app_test database or ones with your own title and replace the database names throughout the app to match. If you do make your own they should end in _development and _test to match with the Rack_Env that is in place.
+```git clone git@github.com:wrumble/SilkFredApp.git```
 
-After this run...
+```cd SilkFredApp```
 
-```
-bundle
-```
+```bundle```
 
-Feel free to add/improve and make a pull request.
+```ruby app/app.rb```
