@@ -2,8 +2,8 @@ require 'rmagick'
 
 class Montage
 
-  def initialize urls, count, csv_file
-    @csv_file = csv_file
+  def initialize urls, count, file
+    @file = file
     @urls = urls
     @count = count
     create_list
@@ -15,7 +15,7 @@ class Montage
   end
 
   def create_montage
-    @path = "app/public/images/montage-#{@count}.jpeg"
+    @path = "#{@file.image_path}/montage-#{@count}.jpeg"
     @image_list.append(false).write(@path)
     add_logo
   end
@@ -27,14 +27,5 @@ class Montage
     logo_image = Magick::ImageList.new()
     logo_image = background.composite(logo, Magick::SouthEastGravity, 40, 40, Magick::OverCompositeOp)
     logo_image.write(@path)
-    save_image
   end
-
-  def save_image
-    File.open(@path, "wb") do |file|
-      @csv_file.image.create(path: @path,
-                             image: file)
-    end
-  end
-
 end

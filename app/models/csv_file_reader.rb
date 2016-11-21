@@ -5,13 +5,12 @@ class CSV_File_Reader
 
   def initialize file
     @file = file
-    @file_path = file.path
     match_image_urls
   end
 
   def match_image_urls
     urls = [[],[]]
-    CSV.foreach(@file_path) do |row|
+    CSV.foreach(@file.path) do |row|
       urls[0] << row[0]
       urls[1] << row[1]
     end
