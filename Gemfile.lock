@@ -5,6 +5,7 @@ GEM
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
+    rake (11.2.2)
     rmagick (2.16.0)
     sinatra (1.4.7)
       rack (~> 1.5)
@@ -17,6 +18,7 @@ PLATFORMS
 
 DEPENDENCIES
   mini_magick
+  rake
   rmagick
   sinatra
 
