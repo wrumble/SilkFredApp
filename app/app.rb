@@ -23,8 +23,6 @@ require_relative 'models/csv_file_updater'
         file.write(data.read)
       end
       @@csv_file = Csv_File.new(name, date, path, image_path)
-      p 1
-      p @@csv_file
       CSV_File_Reader.new(@@csv_file)
       redirect '/finished'
     end
