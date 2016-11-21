@@ -21,3 +21,5 @@ cd SilkFredApp
 bundle
 
 ruby app/app.rb
+
+open http://localhost:4567/ in browser
