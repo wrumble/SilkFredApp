@@ -1,7 +1,7 @@
 require 'csv'
 require_relative 'montage'
 
-class CSV_File_Reader
+class CsvFileReader
 
   def initialize file
     @file = file

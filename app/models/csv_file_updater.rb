@@ -1,7 +1,7 @@
 require 'csv'
 require 'fileutils'
 
-class Csv_File_Updater
+class CsvFileUpdater
 
   def initialize file
     @file = file

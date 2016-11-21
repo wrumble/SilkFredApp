@@ -22,13 +22,13 @@ require_relative 'models/csv_file_updater'
       File.open(path, "wb") do |file|
         file.write(data.read)
       end
-      @@csv_file = Csv_File.new(name, date, path, image_path)
-      CSV_File_Reader.new(@@csv_file)
+      @@csv_file = CsvFile.new(name, date, path, image_path)
+      CsvFileReader.new(@@csv_file)
       redirect '/finished'
     end
 
     get '/finished' do
-      Csv_File_Updater.new(@@csv_file)
+      CsvFileUpdater.new(@@csv_file)
       @file = @@csv_file
       erb(:finished)
     end

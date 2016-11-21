@@ -1,4 +1,4 @@
-class Csv_File
+class CsvFile
 
   attr_reader :name, :date, :path, :image_path
 
